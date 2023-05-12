@@ -26,12 +26,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+
 <?php
 /**
  * Kadence before wrapper hook.
  */
 do_action( 'kadence_before_wrapper' );
 ?>
+
 <div id="wrapper" class="site wp-site-blocks">
 	<?php
 	/**
@@ -50,6 +53,7 @@ do_action( 'kadence_before_wrapper' );
 
 	do_action( 'kadence_after_header' );
 	?>
+	
 
 	<div id="inner-wrap" class="wrap hfeed kt-clear">
 		<?php
