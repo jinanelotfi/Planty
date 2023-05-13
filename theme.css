@@ -69,3 +69,39 @@
 .planty-class a {
     text-decoration: none;    
 }
+
+.button-ok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 56px;
+    background-color: #DC9F96; 
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 990px) {
+    .button-ok {
+        width: 80px;
+    }
+    .container-quantity {
+        width: 60px;
+    }
+}
+
+/* fin responsive */
+
+/* style hook menu admin */
+
+#menu-item-410 {
+    order: 1;
+}
+
+#menu-item-410 a {
+    background-color: #DC9F96;
+    color: white;
+}

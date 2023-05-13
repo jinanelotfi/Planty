@@ -8,16 +8,26 @@ function theme_enqueue_styles(){
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/theme.css', array(), filemtime(get_stylesheet_directory() . '/theme.css'));
 }
 
-// function planty_supports(){
-//     add_theme_support('menus');
-//     register_nav_menu('header', 'En tête du menu');
-// }
-
-// add_action('init', 'planty_supports');
-
-// function planty_supports(){
+// Ajout de l'emplacement Footer dans les menus
 
     register_nav_menus(array(
-    'primary-menu' => 'Header menu',
+    'Header' => 'Prime Header',
     'footer' => 'Footer menu',
     ));
+
+// Fin emplacement Footer dans les menus
+
+
+// début du hook admin 
+
+add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
+
+function add_extra_item_to_nav_menu( $items, $args ) {
+    if ( is_user_logged_in() && $args->theme_location == 'primary' ) {
+        $items .= '<li id="admin-link" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="' . esc_url( admin_url() ) . '">Admin</a></li>';
+    }
+    return $items;
+}
+
+// fin du hook admin 
+
