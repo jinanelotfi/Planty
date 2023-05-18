@@ -35,14 +35,17 @@ do_action( 'kadence_after_content' );
 </div><!-- #wrapper -->
 <?php do_action( 'kadence_after_wrapper' ); ?>
 
-<?php wp_footer(); ?>
 <!-- wp_nav_menu -->
+<footer>
 <?php 
 	wp_nav_menu(array(
 		'theme_location' => 'footer',
  		'menu_class' => 'planty-class',		
 		)); 
 ?>
+</footer>
 <!-- fin wp_nav_menu -->
+<?php wp_footer(); ?>
+
 </body>
 </html>

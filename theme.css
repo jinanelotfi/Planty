@@ -82,7 +82,7 @@
     color: white;
 }
 
-/* Responsive */
+/* Responsive boutons commande*/
 
 @media (max-width: 990px) {
     .button-ok {
@@ -93,7 +93,21 @@
     }
 }
 
-/* fin responsive */
+@media (max-width: 400px) {
+    .button-ok {
+        width: 100px;
+    }
+    .container-quantity {
+        width: 150px;
+    }
+    .item-quantity {
+        width: 60px;
+    }
+    .plus-minus {
+        width: 40px;
+    }
+}
+/* fin responsive boutons commande */
 
 /* style hook menu admin */
 
@@ -105,3 +119,5 @@
     background-color: #DC9F96;
     color: white;
 }
+
+/* fin style hook menu admin */
