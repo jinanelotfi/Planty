@@ -22,7 +22,7 @@ function theme_enqueue_styles(){
 add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
 
 function add_extra_item_to_nav_menu( $items, $args ) {
-    if ( is_user_logged_in() && $args->theme_location == 'primary' || $args->theme_location == 'secondary' || $args->theme_location == 'mobile') {
+    if ( is_user_logged_in() && ( $args->theme_location == 'primary' || $args->theme_location == 'mobile' )) {
         $items .= '<li id="admin-link" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="' . esc_url( admin_url() ) . '">Admin</a></li>';
     }
     return $items;
